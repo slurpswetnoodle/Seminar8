@@ -1,0 +1,11 @@
+﻿CREATE TABLE [dbo].[Book]
+(
+	[ISBN] BIGINT NOT NULL,
+	[Title] VARCHAR(50) NOT NULL,
+	[YearPublished] INT NOT NULL,
+	[AuthorId] INT NOT NULL,
+	[StudentId] VARCHAR(10) NULL,
+	CONSTRAINT PK_ISBN PRIMARY KEY (ISBN),
+	CONSTRAINT FK_Book_AuthorId FOREIGN KEY (AuthorId) REFERENCES Author(AuthorId),
+	CONSTRAINT FK_Book_StudentId FOREIGN KEY (StudentId) REFERENCES Student(StudentId)
+)
